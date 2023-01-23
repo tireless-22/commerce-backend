@@ -9,13 +9,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-public class items extends HttpServlet {
+public class itemDetails extends HttpServlet {
+
+
     public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
+
+        String id = req.getParameter("id");
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecom", "root", "Knk@1234");
-            String query1 = "select * from Item ORDER BY created_at DESC";
+            String query1 = "select * from Item where id=? ORDER BY created_at DESC";
+
+
             PreparedStatement st1 = con.prepareStatement(query1);
+            st1.setString(1, id);
             ResultSet rs = st1.executeQuery();
             JsonArray jsonArray = new JsonArray();
             while (rs.next()) {

@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-
 public class order extends HttpServlet {
     public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
         String id=req.getParameter("id");
@@ -28,13 +27,7 @@ public class order extends HttpServlet {
                 System.out.println("hello from else");
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecom", "root", "Knk@1234");
-//                String query2 = "insert into OrderItem SELECT ? as orderId,itemId,quantity from Cart where userId=?";
-                String query2="insert into OrderItem (select ? as orderId, Cart.itemId, Cart.quantity, Item.image_id, Item.price, ? as userId, Cart.created_at from Cart inner join Item on Item.id=Cart.itemId where Cart.userId=?)";
-
-
-
-
-
+                String query2="insert into OrderItem (select ? as orderId, Cart.itemId, Cart.quantity, Item.image_id, Item.price, ? as userId, Cart.created_at,Item.name from Cart inner join Item on Item.id=Cart.itemId where Cart.userId=?)";
                 PreparedStatement st2 = con1.prepareStatement(query2);
                 st2.setString(1, id);
                 st2.setString(2, userId);
@@ -52,7 +45,6 @@ public class order extends HttpServlet {
                 PreparedStatement st3 = con2.prepareStatement(query3);
                 st3.setString(1, userId);
                 int count3 = st3.executeUpdate();
-
                 res.getWriter().println("message sent successfully");
             }
         } catch (Exception e) {

@@ -155,5 +155,67 @@
 
 
 
+  <servlet>
+    <servlet-name>ordered</servlet-name>
+    <servlet-class>com.example.ordered</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>ordered</servlet-name>
+    <url-pattern>/ordered</url-pattern>
+  </servlet-mapping>
+
+
+
+
+  <servlet>
+    <servlet-name>addItem</servlet-name>
+    <servlet-class>com.example.addItem</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>addItem</servlet-name>
+    <url-pattern>/addItem</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>itemDetails</servlet-name>
+    <servlet-class>com.example.itemDetails</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>itemDetails</servlet-name>
+    <url-pattern>/itemDetails</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>updateItem</servlet-name>
+    <servlet-class>com.example.updateItem</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>updateItem</servlet-name>
+    <url-pattern>/updateItem</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>deleteItem</servlet-name>
+    <servlet-class>com.example.deleteItem</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>deleteItem</servlet-name>
+    <url-pattern>/deleteItem</url-pattern>
+  </servlet-mapping>
+
+
+
 
 </web-app>
