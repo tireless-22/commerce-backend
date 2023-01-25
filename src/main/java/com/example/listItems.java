@@ -13,6 +13,8 @@ import static java.lang.Integer.parseInt;
 public class listItems extends HttpServlet{
     public void service(HttpServletRequest req,HttpServletResponse res) throws IOException {
         int id=parseInt(req.getParameter("userId"));
+
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecom", "root", "Knk@1234");

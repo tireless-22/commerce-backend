@@ -9,22 +9,12 @@ import java.sql.PreparedStatement;
 public class addItem extends HttpServlet {
     public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
 
-//        name,description,category,price,image_id,quantity
-
-
         String name = req.getParameter("name");
         String description = req.getParameter("description");
-//        String category = req.getParameter("category");
         String price = req.getParameter("price");
-
         String category="general";
         String image_id = req.getParameter("image_id");
         String quantity = req.getParameter("quantity");
-
-
-
-
-
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -37,7 +27,6 @@ public class addItem extends HttpServlet {
             st1.setString(4, price);
             st1.setString(5, image_id);
             st1.setString(6, quantity);
-
 
             int count = st1.executeUpdate();
             if (count == 0) {

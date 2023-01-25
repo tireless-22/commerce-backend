@@ -215,6 +215,28 @@
     <url-pattern>/deleteItem</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>orderDetail</servlet-name>
+    <servlet-class>com.example.orderDetail</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>orderDetail</servlet-name>
+    <url-pattern>/orderDetail</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>allOrders</servlet-name>
+    <servlet-class>com.example.allOrders</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>allOrders</servlet-name>
+    <url-pattern>/allOrders</url-pattern>
+  </servlet-mapping>
+
 
 
 

@@ -8,14 +8,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 public class updateItem extends HttpServlet{
     public void service(HttpServletRequest req,HttpServletResponse res) throws IOException {
-
         String id=req.getParameter("id");
         String name=req.getParameter("name");
         String description=req.getParameter("description");
         String price=req.getParameter("price");
         String image_id=req.getParameter("image_id");
         String quantity=req.getParameter("quantity");
-
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecom", "root", "Knk@1234");
@@ -38,5 +36,3 @@ public class updateItem extends HttpServlet{
         }
     }
 }
-
-
